@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include '../config.php';
 
 /**
  * $_SERVER con esta "super-global" detecto con qué método
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          * la función header redirige a la página principal index.php
          * de lo contrario recargaría la misma página.
          */
-        header("Location: index.php"); 
+        header("Location: ../index.php"); 
         exit;
     } else {
         echo "Error al insertar: " . $connection->error;

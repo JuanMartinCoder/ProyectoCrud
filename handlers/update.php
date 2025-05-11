@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include '../config.php';
 
 $id = $_GET['id'];
 $result = $connection->query("SELECT * FROM students WHERE id = $id");
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE students SET fullname='$name', email='$email', age=$age WHERE id=$id";
 
     if ($connection->query($sql) === TRUE) {
-        header("Location: index.php");
+        header("Location: ../index.php");
         exit;
     } else {
         echo "Error al actualizar: " . $connection->error;

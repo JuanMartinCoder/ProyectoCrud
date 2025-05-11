@@ -31,7 +31,7 @@ echo "</head>";
 
 echo "<body>";
 echo "<h2>Listado de Estudiantes</h2>";
-echo "<a href='insert.php'>Agregar Nuevo</a><br><br>";
+echo "<a href='handlers/insert.php'>Agregar Nuevo</a><br><br>";
 
 if ($result->num_rows > 0) {
     echo "<table border='1' cellpadding='10'>";
@@ -42,8 +42,8 @@ if ($result->num_rows > 0) {
                 <td>{$row['email']}</td>
                 <td>{$row['age']}</td>
                 <td>
-                    <a href='update.php?id={$row['id']}'>Editar</a> |
-                    <a href='delete.php?id={$row['id']}'>Borrar</a>
+                    <a href='handlers/update.php?id={$row['id']}'>Editar</a> |
+                    <a href='handlers/delete.php?id={$row['id']}'>Borrar</a>
                 </td>
               </tr>";
     }
