@@ -1,6 +1,5 @@
 -- Crear la base de datos
-CREATE DATABASE IF NOT EXISTS students_db
-CHARACTER SET utf8 
+CREATE DATABASE IF NOT EXISTS students_db CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
 -- Crear usuario de la base de datos
@@ -9,10 +8,10 @@ CREATE USER 'students_user'@'localhost' IDENTIFIED BY '12345';
 -- Otorgar todos los permisos sobre la base de datos
 GRANT ALL PRIVILEGES ON students_db.* TO 'students_user'@'localhost';
 
--- Aplicar los cambios en los permisos​
-FLUSH PRIVILEGES;​
+-- Aplicar los cambios en los permisos
+FLUSH PRIVILEGES;
 
--- Usar la base de datos​
+-- Usar la base de datos
 USE students_db;
 
 -- Crear la tabla students
