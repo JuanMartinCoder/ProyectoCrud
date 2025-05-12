@@ -1,42 +1,30 @@
-<?php
-/**
- * Este es el script por donde comienza el sitio, el nombre index.php
- * es una convención estándar como puede serlo index.html
- */
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' type="text/css" href='style.css'>
+  </head>
 
-/**
- * Al principio se incluye el archivo de configuración, que en este caso no es
- * una mala práctica porque está muy bien tener la conexión a la base de datos
- * en un solo lugar.
- */
-include 'config.php';
+  <body>
+    <h2>Listado de Estudiantes</h2>
 
-/**
- * uso el objeto connection para ejecutar una consulta
- * a la base de datos.
- * query es una función("método") 
- */
-$result = $connection->query("SELECT * FROM students");
+    <main>
+    <p class="addStudent">
+      <a href='handlers/insert.php'>Agregar Nuevo</a>
+    </p>
 
-/**
- * Con echo mostramos por "pantalla" (navegador web)
- * el html al cliente.
- */
-echo "<!DOCTYPE html>";
-echo "<html lang='es'>";
-echo "<head>";
-echo "<meta charset='UTF-8'>";
-echo "<link rel='stylesheet' href='style.css'>";
-echo "</head>";
+    <?php
 
-echo "<body>";
-echo "<h2>Listado de Estudiantes</h2>";
-echo "<a href='handlers/insert.php'>Agregar Nuevo</a><br><br>";
+    // No hay necesidad de usar echo para renderizar cada etiqueta HTML, simplemente se 
+    // puede meter PHP dentro de HTML, de esta forma queda mas prolijo 
+    include 'config.php';
 
-if ($result->num_rows > 0) {
-    echo "<table border='1' cellpadding='10'>";
-    echo "<tr><th>Nombre</th><th>Email</th><th>Edad</th><th>Acciones</th></tr>";
-    while ($row = $result->fetch_assoc()) {
+    $result = $connection->query("SELECT * FROM students");
+
+    if ($result->num_rows > 0) {
+      echo '<table class="table">';
+      echo "<thead><tr><th>Nombre</th><th>Email</th><th>Edad</th><th>Acciones</th></tr></thead>";
+      while ($row = $result->fetch_assoc()) {
         echo "<tr>
                 <td>{$row['fullname']}</td>
                 <td>{$row['email']}</td>
@@ -47,10 +35,11 @@ if ($result->num_rows > 0) {
                 </td>
               </tr>";
     }
-    echo "</table>";
-} else {
-    echo "No hay estudiantes cargados.";
-}
-echo "</body>";
-echo "</html>";
-?>
+      echo "</table>";
+    } else {
+      echo "No hay estudiantes cargados.";
+    }
+    ?>
+    </main>
+  </body>
+</html>

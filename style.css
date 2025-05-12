@@ -1,8 +1,68 @@
-/* table {
-    border-collapse: collapse;
-}
-th, td {
-    padding: 10px;
-} */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 
+}
+
+
+h2 {
+  text-align: center;
+  background-color: #EEEEEE;
+  color: #B6FA4;
+  padding: 10px 0;
+}
+
+.addStudent {
+  padding: 10px 0;
+  margin:10px 0;
+}
+
+.addStudent a{
+  background-color: #4F7849;
+  color:#fff;
+  border: 1px solid #4F7849;
+  border-radius: 5%;
+  padding: 5px 9px;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+table.table {
+  border: 1px solid #FFFFFF;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.table td, table.table th {
+  border: 1px solid #FFFFFF;
+  padding: 3px 0px;
+}
+table.table tbody td {
+  font-size: 13px;
+}
+table.table tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.table thead {
+  background: #0B6FA4;
+  border-bottom: 5px solid #FFFFFF;
+}
+table.table thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #FFFFFF;
+}
+table.table thead th:first-child {
+  border-left: none;
+}
 @import url(w3.css);
