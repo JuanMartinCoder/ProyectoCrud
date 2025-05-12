@@ -28,10 +28,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<h2>Agregar Estudiante</h2>
-<form action="insert.php" method="post">
-    Nombre completo: <input type="text" name="fullname" required><br>
-    Email: <input type="email" name="email" required><br>
-    Edad: <input type="number" name="age" required><br>
-    <input type="submit" value="Guardar">
-</form>
+<!DOCTYPE html>
+<html lang='es'>
+    <head>
+      <meta charset='UTF-8'>
+      <link rel='stylesheet' type="text/css" href='../style.css'>
+    </head>
+
+    <body>
+    <h2>Agregar Estudiante</h2>
+      
+  
+    <main class="main_formulario">
+      <form action="insert.php" method="post">
+        <div class="campo">
+          <label>Nombre completo: </label>
+          <input type="text" name="fullname" required>
+        </div>
+        <div class="campo">
+          <label>Email: </label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="campo">
+          <label>Edad: </label>
+          <input type="number" name="age" required>
+        </div>
+        <div class="campo">
+          <input type="submit" value="Guardar" class="guardar_estudiante">
+        </div>
+      </form>
+     </main>
+   </body>
+</html>

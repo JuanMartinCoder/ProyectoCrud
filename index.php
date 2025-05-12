@@ -18,6 +18,7 @@
     // No hay necesidad de usar echo para renderizar cada etiqueta HTML, simplemente se 
     // puede meter PHP dentro de HTML, de esta forma queda mas prolijo 
     include 'config.php';
+    
 
     $result = $connection->query("SELECT * FROM students");
 

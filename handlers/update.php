@@ -20,14 +20,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang='es'>
+    <head>
+      <meta charset='UTF-8'>
+      <link rel='stylesheet' type="text/css" href='../style.css'>
+    </head>
 
-<h2>Editar Estudiante</h2>
-<!--<form method="post">--> <!--NO SE HACE si no especifo action, usa la url actual con el id por GET-->
+    <body>
+    <h2>Modificar Estudiante</h2>
+      
+  
+    <main class="main_formulario">
+      <form action="update.php?id=<?= $row['id'] ?>" method="post">
+        <div class="campo">
+          <label>Nombre completo: </label>
+          <input type="text" name="fullname" value="<?= $row['fullname'] ?>" required>
+        </div>
+        <div class="campo">
+          <label>Email: </label>
+          <input type="email" name="email" value="<?= $row['email'] ?>" required>
+        </div>
+        <div class="campo">
+          <label>Edad: </label>
+          <input type="number" name="age" value="<?= $row['age'] ?>" required>
+        </div>
+        <div class="campo">
+          <input type="submit" value="Actualizar" class="guardar_estudiante">
+        </div>
+      </form>
+     </main>
+   </body>
+</html>
 
-<!-- En el action se agrega el id de la fila que estoy editando--> 
-<form action="update.php?id=<?= $row['id'] ?>" method="post">
-    Nombre completo: <input type="text" name="fullname" value="<?= $row['fullname'] ?>" required><br>
-    Email: <input type="email" name="email" value="<?= $row['email'] ?>" required><br>
-    Edad: <input type="number" name="age" value="<?= $row['age'] ?>" required><br>
-    <input type="submit" value="Actualizar">
-</form>
